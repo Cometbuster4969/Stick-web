@@ -148,7 +148,7 @@ export function TwistLab() {
                 </div>
               </div>
               <div className="p-6">
-                <h4 className="text-[11px] tracking-[0.2em] uppercase text-muted mb-3 font-semibold">☠ Select lethal zones</h4>
+                <h3 className="text-[11px] tracking-[0.2em] uppercase text-muted mb-3 font-semibold">☠ Select lethal zones</h3>
                 <div className="flex flex-wrap gap-2 mb-5">
                   {W.zones.map((z) => (
                     <button
@@ -228,7 +228,7 @@ export function HowItWorks() {
             <Reveal key={s.n} delay={(i % 3) * 0.08}>
               <div className="glass card-hover rounded-2xl p-5.5 p-5 h-full">
                 <div className="font-mono text-xs font-bold text-void bg-gradient-to-br from-ember to-ember-deep w-8 h-8 rounded-[10px] flex items-center justify-center mb-3.5">{s.n}</div>
-                <h4 className="font-display font-bold text-[16px] mb-1.5">{s.t}</h4>
+                <h3 className="font-display font-bold text-[16px] mb-1.5">{s.t}</h3>
                 <p className="text-[13.5px] text-muted leading-relaxed">{s.d}</p>
               </div>
             </Reveal>

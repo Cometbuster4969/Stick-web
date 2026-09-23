@@ -20,7 +20,7 @@ export function Weapons() {
             <Reveal key={w.name} delay={(i % 3) * 0.07} className={SPANS[i]}>
               <div className="glass card-hover spot rounded-2xl p-5 md:p-6 h-full group">
                 <div className="text-[34px] group-hover:scale-110 transition-transform origin-left">{w.icon}</div>
-                <h4 className="font-display font-bold text-[17px] mt-2">{w.name}</h4>
+                <h3 className="font-display font-bold text-[17px] mt-2">{w.name}</h3>
                 <div className="font-mono text-[11px] text-ember-soft mt-1 leading-relaxed">{w.zones.join(' · ')}</div>
                 <p className="text-[13px] text-muted mt-2.5 leading-relaxed">{w.note}</p>
                 <div className="font-mono text-[11px] text-dim mt-3">reach <b className="text-gold">{w.reach}</b></div>
@@ -54,7 +54,7 @@ export function Arenas() {
             <Reveal key={a.t} delay={i * 0.08}>
               <div className="glass card-hover spot rounded-2xl p-6 h-full relative overflow-hidden">
                 <div className={`absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r ${ARENA_BAR[a.c]}`} />
-                <h4 className="font-display font-bold text-xl">{a.e} {a.t}</h4>
+                <h3 className="font-display font-bold text-xl">{a.e} {a.t}</h3>
                 <p className="text-sm text-muted mt-2 leading-relaxed">{a.d}</p>
                 <div className="font-mono text-[11.5px] bg-black/50 border border-white/8 rounded-xl px-3.5 py-2.5 mt-4 text-muted leading-[1.9]">
                   {a.p.map((l) => <div key={l}>{l}</div>)}

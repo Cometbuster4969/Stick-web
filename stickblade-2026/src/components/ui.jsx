@@ -391,19 +391,19 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <h5 className="text-[11px] tracking-[0.2em] uppercase text-dim mb-4 font-semibold">Arena</h5>
+            <h2 className="text-[11px] tracking-[0.2em] uppercase text-dim mb-4 font-semibold">Arena</h2>
             {[['⚔ Live fights', LIVE_URL], ['📊 Leaderboard', LIVE_URL + 'leaderboard'], ['🏆 Tournaments', LIVE_URL + 'tournament'], ['📜 History', LIVE_URL + 'history']].map(([t, u]) => (
               <Link001 key={t} href={u} className="text-sm text-muted hover:text-ember-soft mb-2.5 w-fit">{t}</Link001>
             ))}
           </div>
           <div>
-            <h5 className="text-[11px] tracking-[0.2em] uppercase text-dim mb-4 font-semibold">Code & Docs</h5>
+            <h2 className="text-[11px] tracking-[0.2em] uppercase text-dim mb-4 font-semibold">Code & Docs</h2>
             {[['★ GitHub repo', GH_URL], ['🐞 Issues', GH_URL + '/issues'], ['📖 METHODOLOGY.md', GH_URL + '/blob/main/METHODOLOGY.md'], ['📜 CITATION.cff', GH_URL + '/blob/main/CITATION.cff']].map(([t, u]) => (
               <Link001 key={t} href={u} className="text-sm text-muted hover:text-ember-soft mb-2.5 w-fit">{t}</Link001>
             ))}
           </div>
           <div>
-            <h5 className="text-[11px] tracking-[0.2em] uppercase text-dim mb-4 font-semibold">Project</h5>
+            <h2 className="text-[11px] tracking-[0.2em] uppercase text-dim mb-4 font-semibold">Project</h2>
             <Link000 href="/research#research" onClick={(e) => { e.preventDefault(); navigate('/research', 'research') }} className="text-sm text-muted hover:text-ember-soft mb-2.5 w-fit">🔬 Frozen Eval Pack v1</Link000>
             <Link000 href="/about#roadmap" onClick={(e) => { e.preventDefault(); navigate('/about', 'roadmap') }} className="text-sm text-muted hover:text-ember-soft mb-2.5 w-fit">🛣️ Roadmap</Link000>
             <Link000 href="/about#team" onClick={(e) => { e.preventDefault(); navigate('/about', 'team') }} className="text-sm text-muted hover:text-ember-soft mb-2.5 w-fit">👥 Team</Link000>

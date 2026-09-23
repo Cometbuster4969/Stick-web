@@ -19,7 +19,7 @@ export function Features() {
             <Reveal key={f.t} delay={(i % 4) * 0.06}>
               <div className="glass card-hover spot rounded-2xl p-5 h-full group">
                 <div className="text-[26px] group-hover:scale-125 transition-transform origin-left inline-block">{f.e}</div>
-                <h4 className="font-display font-bold text-[15px] mt-2.5">{f.t}</h4>
+                <h3 className="font-display font-bold text-[15px] mt-2.5">{f.t}</h3>
                 <p className="text-[12.5px] text-muted mt-1 leading-relaxed">{f.d}</p>
               </div>
             </Reveal>
@@ -66,16 +66,16 @@ export function Tournaments() {
               />
               <div className="relative flex flex-wrap justify-center gap-y-6 gap-x-4 md:gap-x-10 items-stretch">
               <div className="flex flex-col justify-center gap-4">
-                <h5 className="text-[10.5px] tracking-[0.25em] uppercase text-dim text-center font-semibold">Semifinals</h5>
+                <h3 className="text-[10.5px] tracking-[0.25em] uppercase text-dim text-center font-semibold">Semifinals</h3>
                 <BMatch a="GPT-OSS 120B" b="Llama 3.1 8B" sa="KO" sb="T9" wa delay={0} />
                 <BMatch a="DeepSeek R1 70B" b="Qwen3 32B" sa="T11" sb="KO" wa={false} delay={0.12} />
               </div>
               <div className="flex flex-col justify-center gap-4">
-                <h5 className="text-[10.5px] tracking-[0.25em] uppercase text-dim text-center font-semibold">Final</h5>
+                <h3 className="text-[10.5px] tracking-[0.25em] uppercase text-dim text-center font-semibold">Final</h3>
                 <BMatch a="GPT-OSS 120B" b="Qwen3 32B" sa="KO" sb="T7" wa delay={0.24} />
               </div>
               <div className="flex flex-col justify-center gap-4">
-                <h5 className="text-[10.5px] tracking-[0.25em] uppercase text-dim text-center font-semibold">Champion</h5>
+                <h3 className="text-[10.5px] tracking-[0.25em] uppercase text-dim text-center font-semibold">Champion</h3>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
                   transition={{ delay: 0.4, type: 'spring', stiffness: 120 }}
@@ -119,7 +119,7 @@ export function Research() {
         </div>
         <Reveal>
           <div className="border border-gold/30 bg-gold/5 rounded-2xl p-6 md:p-7">
-            <h4 className="font-display font-bold text-gold text-[17px]">📉 The honest null: perceived Elo ≠ mechanical win-rate</h4>
+            <h3 className="font-display font-bold text-gold text-[17px]">📉 The honest null: perceived Elo ≠ mechanical win-rate</h3>
             <p className="text-sm md:text-[15px] text-muted mt-2 leading-relaxed">
               Merging organic + frozen matches (<strong className="text-white">n=14 shared models</strong>) found{' '}
               <code className="font-mono text-gold bg-gold/10 px-2 py-0.5 rounded-md text-[13px]">Spearman ρ = +0.148, p = 0.629, 95% CI [−0.450, +0.712]</code>{' '}
@@ -210,7 +210,7 @@ export function ApiDocs() {
         <div className="grid lg:grid-cols-2 gap-3.5 mb-5">
           <Reveal>
             <div className="glass rounded-2xl p-6 h-full">
-              <h4 className="font-mono text-sm text-ember mb-4">◈ stickblade/ — Python backend</h4>
+              <h3 className="font-mono text-sm text-ember mb-4">◈ stickblade/ — Python backend</h3>
               <ul className="font-mono text-[12.5px] flex flex-col gap-2.5">
                 {ARCH_BE.map(([f, d]) => (
                   <li key={f}><b className="text-white">{f}</b> <span className="text-dim">{d}</span></li>
@@ -220,7 +220,7 @@ export function ApiDocs() {
           </Reveal>
           <Reveal delay={0.08}>
             <div className="glass rounded-2xl p-6 h-full">
-              <h4 className="font-mono text-sm text-ember mb-4">◈ stickblade-web/ — Next.js 15 frontend</h4>
+              <h3 className="font-mono text-sm text-ember mb-4">◈ stickblade-web/ — Next.js 15 frontend</h3>
               <ul className="font-mono text-[12.5px] flex flex-col gap-2.5">
                 {ARCH_FE.map(([f, d]) => (
                   <li key={f}><b className="text-white">{f}</b> <span className="text-dim">{d}</span></li>
@@ -275,7 +275,7 @@ export function Roadmap() {
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-3.5">
           <Reveal>
             <div className="rounded-2xl p-6 border border-ember/25 bg-ember/[0.03] h-full">
-              <h4 className="font-display font-bold text-[17px] mb-4">✅ Shipped (2026-06 → 2026-09)</h4>
+              <h3 className="font-display font-bold text-[17px] mb-4">✅ Shipped (2026-06 → 2026-09)</h3>
               <ul className="grid sm:grid-cols-2 gap-x-5 gap-y-2.5 text-[13px] text-muted">
                 {SHIPPED.map(([t, d], i) => (
                   <motion.li key={t} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.03 }} className="flex gap-2">
@@ -287,7 +287,7 @@ export function Roadmap() {
           </Reveal>
           <Reveal delay={0.08}>
             <div className="rounded-2xl p-6 border border-gold/25 bg-gold/[0.03] h-full">
-              <h4 className="font-display font-bold text-[17px] mb-4">🟦 Coming next</h4>
+              <h3 className="font-display font-bold text-[17px] mb-4">🟦 Coming next</h3>
               <ul className="flex flex-col gap-2.5 text-[13px] text-muted">
                 {COMING.map(([t, d], i) => (
                   <motion.li key={t} initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex gap-2">
@@ -317,7 +317,7 @@ export function Team() {
             <div className="glass card-hover rounded-2xl p-6 flex gap-4 items-center">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-ember to-ember-deep flex items-center justify-center font-display font-bold text-2xl text-void shrink-0">AK</div>
               <div>
-                <h4 className="font-display font-bold text-[17px]">Ayush Kumar</h4>
+                <h3 className="font-display font-bold text-[17px]">Ayush Kumar</h3>
                 <div className="text-[13px] text-ember font-semibold">Founder · BIT Mesra ECE ’29 · 100% of code</div>
                 <p className="text-[13px] text-muted mt-1">Physics engine, LLM brains, frontend, eval methodology, frozen pack, CI. 19, building the benchmark the agentic era needs.</p>
               </div>
@@ -327,7 +327,7 @@ export function Team() {
             <div className="glass card-hover rounded-2xl p-6 flex gap-4 items-center">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-zinc-600 to-zinc-800 flex items-center justify-center font-display font-bold text-2xl text-muted shrink-0">?</div>
               <div>
-                <h4 className="font-display font-bold text-[17px]">Co-founder (BITS Pilani Hyderabad)</h4>
+                <h3 className="font-display font-bold text-[17px]">Co-founder (BITS Pilani Hyderabad)</h3>
                 <div className="text-[13px] text-muted font-semibold">Product & research strategy · joining at grant approval</div>
                 <p className="text-[13px] text-muted mt-1">Genuine founding partnership — equity split, joint development, Pvt. Ltd. on funding. Team risk, stated plainly.</p>
               </div>

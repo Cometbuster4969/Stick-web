@@ -90,7 +90,7 @@ stickblade-2026/
     ├── main.jsx            # entry + self-hosted fonts
     ├── App.jsx             # Lenis + routing + preloader + cursor + spotlight
     ├── router.jsx          # zero-dep path router (pushState + event)
-    ├── pages.jsx           # Home / Fights / Research / About / 404 composition
+    ├── pages/              # Home / Fights / Research / About / 404 (lazy-split)
     ├── index.css           # Tailwind v4 ember theme + custom utilities
     ├── data.jsx            # weapons/SVGs, features, API, roadmap, FAQs
     ├── lib/

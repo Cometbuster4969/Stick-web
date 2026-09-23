@@ -1,11 +1,27 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import Lenis from 'lenis'
 import { AnimatePresence, MotionConfig } from 'framer-motion'
 import { Nav, Footer, Preloader, Cursor, SkipLink, goTo } from './components/ui'
-import { HomePage, FightsPage, ResearchPage, AboutPage, NotFoundPage } from './pages'
+import NotFoundPage from './pages/NotFoundPage'
 import { PAGES, SECTION_PAGE, getPath } from './router'
 
+// route-based splitting: each page (and its heavy sections) loads on demand
+const HomePage = lazy(() => import('./pages/HomePage'))
+const FightsPage = lazy(() => import('./pages/FightsPage'))
+const ResearchPage = lazy(() => import('./pages/ResearchPage'))
+const AboutPage = lazy(() => import('./pages/AboutPage'))
+
 const PAGE_COMPONENTS = { '/': HomePage, '/fights': FightsPage, '/research': ResearchPage, '/about': AboutPage }
+
+// scrolls to the URL hash after the lazy page chunk has rendered
+function ScrollToHash({ navKey }) {
+  useEffect(() => {
+    const h = window.location.hash.replace('#', '')
+    if (h && document.getElementById(h)) requestAnimationFrame(() => goTo('#' + h))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [navKey])
+  return null
+}
 
 export default function App() {
   const [path, setPath] = useState(() => getPath() ?? '/__404__')
@@ -44,13 +60,15 @@ export default function App() {
     }
   }, [])
 
-  // title + scroll on navigation (loading dep re-scrolls once the preloader releases Lenis)
+  // title + scroll on navigation (loading dep re-scrolls once the preloader releases Lenis;
+  // hash targets are handled by ScrollToHash after the chunk renders)
   useEffect(() => {
     document.title = PAGES[path] ?? 'Lost in the Arena — STICKBLADE ARENA'
     const h = window.location.hash.replace('#', '')
-    if (h && document.getElementById(h)) requestAnimationFrame(() => goTo('#' + h))
-    else if (window.__lenis) window.__lenis.scrollTo(0, { immediate: true })
-    else window.scrollTo(0, 0)
+    if (!h || !document.getElementById(h)) {
+      if (window.__lenis) window.__lenis.scrollTo(0, { immediate: true })
+      else window.scrollTo(0, 0)
+    }
   }, [path, navId, loading])
 
   // lock scroll while the preloader is up
@@ -85,7 +103,10 @@ export default function App() {
         <Nav />
         <MotionConfig reducedMotion="user">
         <main id="main">
-          <Page />
+          <Suspense fallback={<div style={{ minHeight: '70vh' }} aria-hidden />}>
+            <ScrollToHash key={path + navId} navKey={path + navId} />
+            <Page />
+          </Suspense>
         </main>
         </MotionConfig>
         <Footer />
