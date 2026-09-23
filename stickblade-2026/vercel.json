@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/fights", "destination": "/index.html" },
+    { "source": "/fights/", "destination": "/index.html" },
+    { "source": "/research", "destination": "/index.html" },
+    { "source": "/research/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/about/", "destination": "/index.html" }
+  ]
+}

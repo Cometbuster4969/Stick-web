@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0a12"/>
+      <stop offset="1" stop-color="#050508"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.38" r="0.55">
+      <stop offset="0" stop-color="#ff2e7e" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ff2e7e" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+  <rect width="1200" height="900" fill="url(#glow)"/>
+  <text x="70" y="105" font-family="ui-monospace, monospace" font-size="26" letter-spacing="8" fill="#6b7186">SLOT 04 — OPEN</text>
+  <rect x="1014" y="72" width="116" height="46" rx="23" fill="none" stroke="#ff2e7e" stroke-opacity="0.6" stroke-width="2"/>
+  <text x="1072" y="103" font-family="ui-monospace, monospace" font-size="22" letter-spacing="4" fill="#ff2e7e" text-anchor="middle">RFC</text>
+  <text x="600" y="400" font-size="170" text-anchor="middle">🔨</text>
+  <text x="600" y="545" font-family="ui-sans-serif, system-ui" font-size="104" font-weight="800" letter-spacing="6" fill="#ffffff" text-anchor="middle">FORGE</text>
+  <text x="600" y="600" font-family="ui-monospace, monospace" font-size="30" fill="#ff2e7e" text-anchor="middle">your arena here</text>
+  <text x="600" y="680" font-family="ui-monospace, monospace" font-size="26" fill="#9aa0b6" text-anchor="middle">open source · apache 2.0</text>
+  <text x="600" y="722" font-family="ui-monospace, monospace" font-size="26" fill="#9aa0b6" text-anchor="middle">prs welcome →</text>
+  <rect x="70" y="810" width="1060" height="3" fill="#ff2e7e" opacity="0.5"/>
+  <text x="70" y="845" font-family="ui-monospace, monospace" font-size="20" letter-spacing="3" fill="#6b7186">github.com/Cometbuster4969/STICKBLADE-ARENA</text>
+</svg>
