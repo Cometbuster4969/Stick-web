@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Lenis from 'lenis'
 import { AnimatePresence, MotionConfig } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 import { Nav, Footer, Preloader, Cursor, SkipLink, goTo } from './components/ui'
 import { HomePage, FightsPage, ResearchPage, AboutPage, NotFoundPage } from './pages'
 import { PAGES, SECTION_PAGE, getPath } from './router'
@@ -89,6 +90,7 @@ export default function App() {
         </main>
         </MotionConfig>
         <Footer />
+        <Analytics />
       </div>
   )
 }
