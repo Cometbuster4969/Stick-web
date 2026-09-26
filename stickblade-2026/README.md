@@ -42,6 +42,16 @@ npm i -g vercel
 vercel
 Or drag-import the folder in the Vercel dashboard — the defaults (Vite preset) just work.
 
+Google Search Console verification
+The site is verified by HTML file upload. public/google12a2e868c38185b2.html must stay
+in place — Vite copies public/ verbatim into dist/, so the file serves at the site root
+(https://stick-web.vercel.app/google12a2e868c38185b2.html). Do not rename it, wrap it in
+HTML tags, or move it into src/: the filename on disk and the single line inside it must
+stay identical, or Google reports "verification token not found". Vercel serves static
+files before rewrites, so vercel.json's SPA routes never shadow it.
+To confirm nothing broke after a refactor: curl -I https://stick-web.vercel.app/google12a2e868c38185b2.html
+should return 200, not 404.
+
 Design notes
 Ember theme — warm near-black, bone text, one molten-orange accent. Gold is kept
 for trophies/Elo, green/blue for the two fighters (readability), icy-blue for
