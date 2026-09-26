@@ -16,7 +16,8 @@ export const SECTION_PAGE = {
 }
 
 export function getPath() {
-  const p = window.location.pathname.replace(/\/+$/, '') || '/'
+  let p = window.location.pathname.replace(/\/+$/, '') || '/'
+  if (p === '/index.html') p = '/'
   return PAGES[p] ? p : null // null = 404
 }
 

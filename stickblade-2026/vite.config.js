@@ -5,6 +5,8 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  publicDir: "public",
+  build: { copyPublicDir: true },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

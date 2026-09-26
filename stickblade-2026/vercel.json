@@ -1,5 +1,8 @@
 {
+  "cleanUrls": false,
+  "trailingSlash": false,
   "rewrites": [
+    { "source": "/", "destination": "/index.html" },
     { "source": "/fights", "destination": "/index.html" },
     { "source": "/fights/", "destination": "/index.html" },
     { "source": "/research", "destination": "/index.html" },
@@ -8,6 +11,14 @@
     { "source": "/about/", "destination": "/index.html" }
   ],
   "headers": [
+    {
+      "source": "/google12a2e868c38185b2.html",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
